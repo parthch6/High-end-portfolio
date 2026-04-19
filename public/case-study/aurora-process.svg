@@ -1,0 +1,18 @@
+<svg width="1400" height="840" viewBox="0 0 1400 840" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="840" rx="36" fill="#0B0F19"/>
+  <rect x="44" y="44" width="1312" height="752" rx="28" fill="url(#paint0_linear)"/>
+  <rect x="108" y="108" width="1184" height="124" rx="24" fill="white" fill-opacity="0.06"/>
+  <rect x="108" y="274" width="364" height="432" rx="28" fill="white" fill-opacity="0.05"/>
+  <rect x="518" y="274" width="364" height="432" rx="28" fill="white" fill-opacity="0.05"/>
+  <rect x="928" y="274" width="364" height="432" rx="28" fill="white" fill-opacity="0.05"/>
+  <path d="M290 518C334 464.667 375.333 438 414 438C472 438 492 506 550 506C588.667 506 631.333 475.333 678 414" stroke="#4F46E5" stroke-width="16" stroke-linecap="round"/>
+  <path d="M700 532C743.333 479.333 786.667 453 830 453C895 453 920 532 986 532C1029.33 532 1070.67 504.667 1110 450" stroke="#A855F7" stroke-width="16" stroke-linecap="round"/>
+  <text x="108" y="246" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="42" font-weight="700">Design Process</text>
+  <text x="108" y="744" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="26">Journey mapping, component system, motion refinement</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="44" y1="44" x2="1328.98" y2="809.696" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#161E31"/>
+      <stop offset="1" stop-color="#121826"/>
+    </linearGradient>
+  </defs>
+</svg>

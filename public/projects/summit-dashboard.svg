@@ -1,0 +1,23 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="40" fill="#0B0F19"/>
+  <rect x="52" y="52" width="1096" height="796" rx="30" fill="url(#paint0_linear)"/>
+  <rect x="120" y="138" width="960" height="84" rx="20" fill="white" fill-opacity="0.07"/>
+  <rect x="120" y="278" width="280" height="210" rx="28" fill="white" fill-opacity="0.06"/>
+  <rect x="434" y="278" width="646" height="210" rx="28" fill="white" fill-opacity="0.06"/>
+  <rect x="120" y="528" width="420" height="190" rx="28" fill="white" fill-opacity="0.06"/>
+  <rect x="574" y="528" width="506" height="190" rx="28" fill="white" fill-opacity="0.06"/>
+  <path d="M482 430L578 360L672 394L770 298L860 342L958 258" stroke="url(#paint1_linear)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="958" cy="258" r="18" fill="#A855F7"/>
+  <text x="120" y="252" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="44" font-weight="700">Summit Dashboard</text>
+  <text x="120" y="780" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="28">Analytics product interface</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="52" y1="52" x2="1135.7" y2="829.977" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#161E31"/>
+      <stop offset="1" stop-color="#121826"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="482" y1="344" x2="958" y2="344" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+</svg>

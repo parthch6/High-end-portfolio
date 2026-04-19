@@ -1,0 +1,16 @@
+<svg width="1400" height="840" viewBox="0 0 1400 840" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="840" rx="36" fill="#0B0F19"/>
+  <rect x="44" y="44" width="1312" height="752" rx="28" fill="#121826"/>
+  <circle cx="1160" cy="182" r="160" fill="#A855F7" fill-opacity="0.18"/>
+  <circle cx="258" cy="624" r="208" fill="#4F46E5" fill-opacity="0.18"/>
+  <rect x="108" y="112" width="410" height="84" rx="20" fill="white" fill-opacity="0.08"/>
+  <rect x="108" y="244" width="1184" height="468" rx="28" fill="white" fill-opacity="0.04"/>
+  <rect x="150" y="292" width="338" height="340" rx="24" fill="white" fill-opacity="0.07"/>
+  <rect x="530" y="292" width="338" height="340" rx="24" fill="white" fill-opacity="0.07"/>
+  <rect x="910" y="292" width="338" height="340" rx="24" fill="white" fill-opacity="0.07"/>
+  <path d="M220 380H420" stroke="#E5E7EB" stroke-opacity="0.18" stroke-width="18" stroke-linecap="round"/>
+  <path d="M600 380H800" stroke="#E5E7EB" stroke-opacity="0.18" stroke-width="18" stroke-linecap="round"/>
+  <path d="M980 380H1180" stroke="#E5E7EB" stroke-opacity="0.18" stroke-width="18" stroke-linecap="round"/>
+  <text x="108" y="228" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="42" font-weight="700">Problem Mapping</text>
+  <text x="108" y="744" fill="#9CA3AF" font-family="Arial, sans-serif" font-size="26">Crowded hierarchy, weak focus, inconsistent pacing</text>
+</svg>
