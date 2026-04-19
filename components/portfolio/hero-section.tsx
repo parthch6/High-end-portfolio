@@ -108,7 +108,7 @@ export function HeroSection() {
               </m.span>
             </m.h1>
             <p className="text-body mt-6 max-w-xl">
-              Hi, I'm Parth Chaudhari. I specialize in building full-stack web applications that combine
+              Hi, I&apos;m Parth Chaudhari. I specialize in building full-stack web applications that combine
               robust backend architecture with intuitive user interfaces. Passionate about creating
               seamless digital experiences and solving complex problems through code.
             </p>

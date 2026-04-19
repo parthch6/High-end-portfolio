@@ -9,13 +9,13 @@ export function SiteFooter() {
           <div className="footer-light" aria-hidden="true" />
 
           <div className="relative z-10 max-w-3xl">
-            <span className="eyebrow mb-6">Let's Work Together</span>
+            <span className="eyebrow mb-6">Let&apos;s Work Together</span>
             <h2 className="font-display text-3xl font-bold tracking-display text-foreground sm:text-4xl md:text-6xl">
-              Ready to build something amazing? Let's create it together.
+              Ready to build something amazing? Let&apos;s create it together.
             </h2>
             <p className="text-body mt-5 max-w-2xl">
-              I'm available for freelance projects, full-time opportunities, and collaborations.
-              Whether it's a web application, API development, or complete product redesign—I'm here to help
+              I&apos;m available for freelance projects, full-time opportunities, and collaborations.
+              Whether it&apos;s a web application, API development, or complete product redesign—I'm here to help
               bring your vision to life with clean code and thoughtful design.
             </p>
           </div>
