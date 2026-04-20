@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
 import { SiteFooter } from "@/components/portfolio/site-footer";
 import { MotionLink } from "@/components/ui/motion-link";
+import { siteConfig } from "@/lib/site";
 
 const outcomes = [
   { label: "Conversion Lift", value: "+38%" },
@@ -32,7 +33,32 @@ const processSteps = [
 export const metadata: Metadata = {
   title: "Aurora Commerce Case Study",
   description:
-    "A premium ecommerce case study covering the problem, approach, design process, and outcomes.",
+    "A premium ecommerce case study by Parth Chaudhari covering the problem, approach, design process, and measurable outcomes.",
+  alternates: {
+    canonical: "/case-study/aurora-commerce",
+  },
+  openGraph: {
+    title: "Aurora Commerce Case Study | Parth Chaudhari",
+    description:
+      "A premium ecommerce case study covering the problem, approach, design process, and outcomes.",
+    url: `${siteConfig.url}/case-study/aurora-commerce`,
+    type: "article",
+    images: [
+      {
+        url: "/projects/aurora-commerce.svg",
+        width: 1200,
+        height: 630,
+        alt: "Aurora Commerce case study preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aurora Commerce Case Study | Parth Chaudhari",
+    description:
+      "A premium ecommerce case study covering the problem, approach, design process, and outcomes.",
+    images: ["/projects/aurora-commerce.svg"],
+  },
 };
 
 export default function AuroraCommerceCaseStudyPage() {
