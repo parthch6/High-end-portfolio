@@ -15,7 +15,7 @@ export function SiteFooter() {
             </h2>
             <p className="text-body mt-5 max-w-2xl">
               I&apos;m available for freelance projects, full-time opportunities, and collaborations.
-              Whether it&apos;s a web application, API development, or complete product redesign—I'm here to help
+              Whether it&apos;s a web application, API development, or complete product redesign, I&apos;m here to help
               bring your vision to life with clean code and thoughtful design.
             </p>
           </div>

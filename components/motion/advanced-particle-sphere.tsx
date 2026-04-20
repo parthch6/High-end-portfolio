@@ -10,7 +10,6 @@ import {
   generateOptimizedConnections,
   generateScales,
   DEFAULT_COLORS,
-  type ColorConfig,
 } from '@/lib/particle-sphere-utils';
 
 interface AdvancedParticleGroupProps {
@@ -130,15 +129,11 @@ const AdvancedParticleGroup = ({
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={particleCount}
-            array={particlePositions}
-            itemSize={3}
+            args={[particlePositions, 3]}
           />
           <bufferAttribute
             attach="attributes-aScale"
-            count={particleCount}
-            array={scales}
-            itemSize={1}
+            args={[scales, 1]}
           />
         </bufferGeometry>
         <pointsMaterial
@@ -146,8 +141,6 @@ const AdvancedParticleGroup = ({
           color={colors.particleColor}
           size={0.08}
           sizeAttenuation
-          emissive={colors.particleGlow}
-          emissiveIntensity={0.6}
           fog={false}
         />
       </points>
@@ -157,9 +150,7 @@ const AdvancedParticleGroup = ({
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={linePositions.length / 3}
-            array={linePositions}
-            itemSize={3}
+            args={[linePositions, 3]}
           />
         </bufferGeometry>
         <lineBasicMaterial

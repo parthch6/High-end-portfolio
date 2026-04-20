@@ -206,15 +206,11 @@ const OptimizedParticleGroup = ({
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={particleCount}
-            array={particlePositions}
-            itemSize={3}
+            args={[particlePositions, 3]}
           />
           <bufferAttribute
             attach="attributes-aScale"
-            count={particleCount}
-            array={scales}
-            itemSize={1}
+            args={[scales, 1]}
           />
         </bufferGeometry>
         <shaderMaterial
@@ -235,9 +231,7 @@ const OptimizedParticleGroup = ({
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={linePositions.length / 3}
-            array={linePositions}
-            itemSize={3}
+            args={[linePositions, 3]}
           />
         </bufferGeometry>
         <lineBasicMaterial

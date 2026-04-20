@@ -336,27 +336,19 @@ const Hero3DContent = ({ type = 'cube', colorScheme = 'gradient' }: Hero3DVisual
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={particles.length}
-            array={positions}
-            itemSize={3}
+            args={[positions, 3]}
           />
           <bufferAttribute
             attach="attributes-aScale"
-            count={particles.length}
-            array={scales}
-            itemSize={1}
+            args={[scales, 1]}
           />
           <bufferAttribute
             attach="attributes-aColor"
-            count={particles.length}
-            array={colors}
-            itemSize={3}
+            args={[colors, 3]}
           />
           <bufferAttribute
             attach="attributes-aDotType"
-            count={particles.length}
-            array={dotTypes}
-            itemSize={1}
+            args={[dotTypes, 1]}
           />
         </bufferGeometry>
         <shaderMaterial

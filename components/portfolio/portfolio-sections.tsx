@@ -39,7 +39,30 @@ const projects = [
   },
 ];
 
-const sectionItems = [
+type ContactLink = {
+  label: string;
+  value: string;
+  href: string;
+};
+
+type AboutSection = {
+  id: "about";
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
+type ContactSection = {
+  id: "contact";
+  eyebrow: string;
+  title: string;
+  description: string;
+  contacts: ContactLink[];
+};
+
+type SectionItem = AboutSection | ContactSection;
+
+const sectionItems: SectionItem[] = [
   {
     id: "about",
     eyebrow: "About",
@@ -124,8 +147,8 @@ export function PortfolioSections() {
                 {section.title}
               </h2>
               <p className="text-body mt-5 max-w-prose">{section.description}</p>
-              
-              {section.id === "contact" && "contacts" in section && (
+
+              {section.id === "contact" && (
                 <div className="mt-8 space-y-4">
                   {section.contacts.map((contact) => (
                     <div key={contact.label} className="flex items-start gap-4">

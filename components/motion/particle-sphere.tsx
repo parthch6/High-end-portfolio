@@ -177,8 +177,6 @@ const ParticleGroup = ({
           color="#ffffff"
           size={0.08}
           sizeAttenuation
-          emissive="#ffffff"
-          emissiveIntensity={0.5}
           fog={false}
         />
       </Points>
@@ -188,9 +186,7 @@ const ParticleGroup = ({
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={linePositions.length / 3}
-            array={linePositions}
-            itemSize={3}
+            args={[linePositions, 3]}
           />
         </bufferGeometry>
         <lineBasicMaterial
