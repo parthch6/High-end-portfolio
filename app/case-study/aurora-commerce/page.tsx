@@ -76,7 +76,7 @@ export default function AuroraCommerceCaseStudyPage() {
           <div className="case-study-hero">
             <div className="max-w-3xl">
               <span className="eyebrow mb-6">Case Study</span>
-              <h1 className="font-display text-4xl font-bold tracking-display text-foreground md:text-6xl">
+              <h1 className="font-display text-4xl font-bold tracking-normal text-foreground sm:text-5xl md:text-6xl">
                 Reframing Aurora Commerce as a{" "}
                 <span className="gradient-text">premium product story</span>.
               </h1>
@@ -112,7 +112,7 @@ export default function AuroraCommerceCaseStudyPage() {
             alt="Aurora Commerce overview"
             width={1200}
             height={900}
-            className="h-auto w-full rounded-[1.8rem] object-cover"
+            className="h-auto w-full rounded-lg object-cover"
             priority
             sizes="(min-width: 1280px) 72rem, 100vw"
           />
@@ -201,7 +201,7 @@ export default function AuroraCommerceCaseStudyPage() {
             {processSteps.map((step, index) => (
               <div key={step.title} className="surface-panel p-5 sm:p-6">
                 <p className="case-study-meta-label">0{index + 1}</p>
-                <h3 className="mt-3 font-display text-2xl font-bold tracking-display text-foreground">
+                <h3 className="mt-3 font-display text-xl font-bold tracking-normal text-foreground sm:text-2xl">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-body-sm text-muted">{step.description}</p>
@@ -278,10 +278,10 @@ export default function AuroraCommerceCaseStudyPage() {
           <div className="grid gap-4 sm:gap-5 md:grid-cols-3">
             {outcomes.map((outcome) => (
               <div key={outcome.label} className="surface-panel p-5 sm:p-6">
-                <p className="font-display text-4xl font-bold tracking-display gradient-text">
+                <p className="font-display text-4xl font-bold tracking-normal gradient-text">
                   {outcome.value}
                 </p>
-                <p className="mt-3 text-sm font-medium uppercase tracking-[0.2em] text-muted">
+                <p className="mt-3 text-sm font-medium uppercase tracking-normal text-muted">
                   {outcome.label}
                 </p>
               </div>

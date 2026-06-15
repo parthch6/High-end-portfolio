@@ -1,13 +1,7 @@
-'use client';
+"use client";
 
-import dynamic from "next/dynamic";
 import { ProjectCard } from "@/components/portfolio/project-card";
 import { ScrollReveal } from "@/components/portfolio/scroll-reveal";
-
-const OptimizedParticleSphere = dynamic(
-  () => import("@/components/motion/optimized-particle-sphere").then((mod) => mod.OptimizedParticleSphere),
-  { ssr: false, loading: () => <div className="w-full h-96 bg-gradient-to-br from-slate-950 to-slate-900 rounded-lg" /> }
-);
 
 const projects = [
   {
@@ -39,89 +33,61 @@ const projects = [
   },
 ];
 
-type ContactLink = {
-  label: string;
-  value: string;
-  href: string;
-};
-
-type AboutSection = {
-  id: "about";
-  eyebrow: string;
-  title: string;
-  description: string;
-};
-
-type ContactSection = {
-  id: "contact";
-  eyebrow: string;
-  title: string;
-  description: string;
-  contacts: ContactLink[];
-};
-
-type SectionItem = AboutSection | ContactSection;
-
-const sectionItems: SectionItem[] = [
+const capabilities = [
   {
-    id: "about",
-    eyebrow: "About",
-    title: "Full-Stack developer building modern web experiences.",
-    description:
-      "I'm Parth Chaudhari, a passionate full-stack web developer with expertise in both frontend and backend technologies. I love creating scalable applications that solve real problems. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or learning about the latest web development trends.",
+    title: "Frontend",
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
-    id: "contact",
-    eyebrow: "Contact",
-    title: "Let's collaborate on your next project.",
-    description:
-      "Whether you have an exciting project, want to discuss web development, or just want to connect—feel free to reach out. I'm always open to opportunities and conversations about building great digital products.",
-    contacts: [
-      {
-        label: "Email",
-        value: "Parthchaudhari4678@gmail.com",
-        href: "mailto:Parthchaudhari4678@gmail.com",
-      },
-      {
-        label: "LinkedIn",
-        value: "Parth Chaudhari",
-        href: "https://linkedin.com/in/parth-chaudhari-63088a282",
-      },
-      {
-        label: "GitHub",
-        value: "yourprofile",
-        href: "https://github.com/yourprofile",
-      },
-      {
-        label: "Twitter",
-        value: "@yourhandle",
-        href: "https://twitter.com/yourhandle",
-      },
-    ],
+    title: "Backend",
+    items: ["Node.js", "API design", "Databases", "Auth", "Integrations"],
+  },
+  {
+    title: "Product",
+    items: ["UI systems", "Responsive layouts", "Performance", "Accessibility"],
+  },
+];
+
+const contacts = [
+  {
+    label: "Email",
+    value: "Parthchaudhari4678@gmail.com",
+    href: "mailto:Parthchaudhari4678@gmail.com",
+  },
+  {
+    label: "LinkedIn",
+    value: "Parth Chaudhari",
+    href: "https://linkedin.com/in/parth-chaudhari-63088a282",
+  },
+  {
+    label: "GitHub",
+    value: "parthch6",
+    href: "https://github.com/parthch6",
   },
 ];
 
 export function PortfolioSections() {
   return (
-    <div className="container-shell space-y-4 pb-20 sm:space-y-6 md:pb-section">
+    <div className="container-shell pb-20 md:pb-section">
       <ScrollReveal distance={24}>
         <section
           id="work"
-          className="surface-panel scroll-mt-24 px-4 py-8 sm:px-6 sm:py-10 md:scroll-mt-28 md:px-10 md:py-14"
+          className="section-space scroll-mt-24 border-t border-white/10 md:scroll-mt-28"
         >
-          <span className="eyebrow">Selected Work</span>
-          <div className="mt-6 max-w-3xl">
-            <h2 className="font-display text-3xl font-bold tracking-display text-foreground md:text-5xl">
-              Signature digital products with strong visual intent.
-            </h2>
-            <p className="text-body mt-5 max-w-prose">
-              Reusable project cards make it easy to expand this portfolio with
-              case studies, launches, and product stories while keeping the
-              presentation sharp and consistent.
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1fr)] lg:items-end">
+            <div>
+              <span className="eyebrow">Selected Work</span>
+              <h2 className="mt-6 font-display text-3xl font-bold tracking-normal text-foreground sm:text-4xl md:text-5xl">
+                Signature digital products with strong visual intent.
+              </h2>
+            </div>
+            <p className="text-body max-w-2xl lg:justify-self-end">
+              Case studies, product interfaces, and responsive experiences organized
+              around clear hierarchy, thoughtful motion, and fast implementation.
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:mt-10 md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project, index) => (
               <ScrollReveal
                 key={project.title}
@@ -135,42 +101,85 @@ export function PortfolioSections() {
         </section>
       </ScrollReveal>
 
-      {sectionItems.map((section, index) => (
-        <ScrollReveal key={section.id} delay={0.04 * (index + 1)} distance={24}>
-          <section
-            id={section.id}
-            className="surface-panel scroll-mt-24 px-4 py-8 sm:px-6 sm:py-10 md:scroll-mt-28 md:px-10 md:py-14"
-          >
-            <span className="eyebrow">{section.eyebrow}</span>
-            <div className="mt-6 max-w-3xl">
-              <h2 className="font-display text-3xl font-bold tracking-display text-foreground md:text-5xl">
-                {section.title}
+      <ScrollReveal delay={0.04} distance={24}>
+        <section
+          id="about"
+          className="section-space scroll-mt-24 border-t border-white/10 md:scroll-mt-28"
+        >
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] lg:gap-14">
+            <div>
+              <span className="eyebrow">About</span>
+              <h2 className="mt-6 font-display text-3xl font-bold tracking-normal text-foreground sm:text-4xl md:text-5xl">
+                Full-stack developer building modern web experiences.
               </h2>
-              <p className="text-body mt-5 max-w-prose">{section.description}</p>
-
-              {section.id === "contact" && (
-                <div className="mt-8 space-y-4">
-                  {section.contacts.map((contact) => (
-                    <div key={contact.label} className="flex items-start gap-4">
-                      <div className="min-w-24">
-                        <p className="text-sm font-medium text-muted">{contact.label}</p>
-                      </div>
-                      <a
-                        href={contact.href}
-                        target={contact.href.startsWith("mailto:") ? undefined : "_blank"}
-                        rel={contact.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                        className="text-foreground font-medium hover:text-brand-gradient transition-colors"
-                      >
-                        {contact.value}
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
-          </section>
-        </ScrollReveal>
-      ))}
+
+            <div className="lg:pt-16">
+              <p className="text-body max-w-3xl">
+                I&apos;m Parth Chaudhari, a full-stack web developer focused on
+                scalable applications, refined interfaces, and clean implementation
+                details. I enjoy turning product ideas into fast, responsive, and
+                maintainable digital experiences.
+              </p>
+
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                {capabilities.map((capability) => (
+                  <div key={capability.title} className="surface-panel p-5">
+                    <h3 className="font-display text-xl font-bold tracking-normal text-foreground">
+                      {capability.title}
+                    </h3>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {capability.items.map((item) => (
+                        <span key={item} className="project-tag">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.08} distance={24}>
+        <section
+          id="contact"
+          className="section-space scroll-mt-24 border-t border-white/10 md:scroll-mt-28"
+        >
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(320px,0.7fr)] lg:items-start lg:gap-14">
+            <div>
+              <span className="eyebrow">Contact</span>
+              <h2 className="mt-6 font-display text-3xl font-bold tracking-normal text-foreground sm:text-4xl md:text-5xl">
+                Let&apos;s collaborate on your next project.
+              </h2>
+              <p className="text-body mt-5 max-w-2xl">
+                Whether you have an exciting project, want to discuss web
+                development, or just want to connect, I&apos;m open to opportunities
+                and conversations about building thoughtful digital products.
+              </p>
+            </div>
+
+            <div className="grid gap-3">
+              {contacts.map((contact) => (
+                <a
+                  key={contact.label}
+                  href={contact.href}
+                  target={contact.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={contact.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  className="surface-panel group flex min-w-0 flex-col gap-2 p-5 transition duration-300 ease-premium hover:border-white/20 hover:bg-white/[0.07] sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <span className="text-sm font-medium text-muted">{contact.label}</span>
+                  <span className="min-w-0 break-all text-base font-semibold text-foreground transition-colors group-hover:text-white sm:break-normal sm:text-right">
+                    {contact.value}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
     </div>
   );
 }

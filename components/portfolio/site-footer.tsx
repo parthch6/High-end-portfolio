@@ -10,7 +10,7 @@ export function SiteFooter() {
 
           <div className="relative z-10 max-w-3xl">
             <span className="eyebrow mb-6">Let&apos;s Work Together</span>
-            <h2 className="font-display text-3xl font-bold tracking-display text-foreground sm:text-4xl md:text-6xl">
+            <h2 className="font-display text-3xl font-bold tracking-normal text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
               Ready to build something amazing? Let&apos;s create it together.
             </h2>
             <p className="text-body mt-5 max-w-2xl">
@@ -29,9 +29,9 @@ export function SiteFooter() {
             </MotionLink>
           </div>
 
-          <div className="relative z-10 mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+          <div className="relative z-10 mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
             <p>(c) 2026 Parth Chaudhari. Crafted with care.</p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
               <a
                 href="mailto:Parthchaudhari4678@gmail.com"
                 className="transition duration-300 ease-premium hover:text-foreground"

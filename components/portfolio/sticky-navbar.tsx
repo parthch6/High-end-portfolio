@@ -72,7 +72,7 @@ export function StickyNavbar() {
       >
         <div
           className={cn(
-            "glass-nav flex items-center justify-between rounded-2xl px-3 py-2.5 md:px-5 md:py-3",
+            "glass-nav flex items-center justify-between rounded-lg px-3 py-2.5 md:px-5 md:py-3",
             isScrolled && "shadow-soft"
           )}
         >
@@ -86,7 +86,7 @@ export function StickyNavbar() {
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-gradient text-sm font-bold text-white shadow-glow transition duration-300 ease-premium group-hover:scale-105 group-hover:shadow-accent">
               PC
             </span>
-            <span className="hidden font-display text-base font-semibold tracking-tight text-foreground min-[420px]:block md:text-lg">
+            <span className="hidden font-display text-base font-semibold tracking-normal text-foreground min-[480px]:block md:text-lg">
               Parth Chaudhari
             </span>
           </Link>
@@ -153,7 +153,7 @@ export function StickyNavbar() {
 
         <div
           className={cn(
-            "glass-nav mt-2 overflow-hidden rounded-2xl px-2 transition-all duration-300 ease-premium md:hidden",
+            "glass-nav mt-2 overflow-hidden rounded-lg px-2 transition-all duration-300 ease-premium md:hidden",
             isOpen
               ? "pointer-events-auto max-h-80 py-2 opacity-100"
               : "pointer-events-none max-h-0 py-0 opacity-0"

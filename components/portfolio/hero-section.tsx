@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { m, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { m } from "framer-motion";
 
 import { useMotionSettings } from "@/components/motion/motion-settings-provider";
 import { MotionLink } from "@/components/ui/motion-link";
@@ -13,44 +13,8 @@ const Hero3DVisual = dynamic(
 
 const statusItems = ["Available for opportunities", "Remote friendly", "Full-Stack specialist"];
 
-const previewCards = [
-  {
-    title: "Aurora Commerce",
-    type: "Case Study",
-    className: "left-4 top-6 w-56 rotate-[-4deg] md:left-8 md:top-8",
-  },
-  {
-    title: "Nova Studio",
-    type: "Interactive Site",
-    className: "right-3 top-28 w-52 rotate-[5deg] md:right-8 md:top-32",
-  },
-  {
-    title: "Summit Dashboard",
-    type: "Product UI",
-    className: "bottom-8 left-12 w-60 rotate-[2deg] md:bottom-10 md:left-20",
-  },
-];
-
 export function HeroSection() {
   const { isMobile, reduceMotion } = useMotionSettings();
-  const pointerX = useMotionValue(0);
-  const pointerY = useMotionValue(0);
-  const springX = useSpring(pointerX, { stiffness: 80, damping: 24, mass: 0.4 });
-  const springY = useSpring(pointerY, { stiffness: 80, damping: 24, mass: 0.4 });
-  const cardMotion = [
-    {
-      x: useTransform(springX, [-1, 1], reduceMotion ? [0, 0] : [-10, 10]),
-      y: useTransform(springY, [-1, 1], reduceMotion ? [0, 0] : [-8, 8]),
-    },
-    {
-      x: useTransform(springX, [-1, 1], reduceMotion ? [0, 0] : [8, -8]),
-      y: useTransform(springY, [-1, 1], reduceMotion ? [0, 0] : [-6, 6]),
-    },
-    {
-      x: useTransform(springX, [-1, 1], reduceMotion ? [0, 0] : [-6, 6]),
-      y: useTransform(springY, [-1, 1], reduceMotion ? [0, 0] : [7, -7]),
-    },
-  ];
 
   const fadeUp = {
     hidden: { opacity: 0, y: reduceMotion ? 0 : isMobile ? 16 : 28 },
@@ -108,36 +72,21 @@ export function HeroSection() {
               </m.span>
             </m.h1>
             <p className="text-body mt-6 max-w-xl">
-              Hi, I&apos;m Parth Chaudhari. I specialize in building full-stack web applications that combine
-              robust backend architecture with intuitive user interfaces. Passionate about creating
-              seamless digital experiences and solving complex problems through code.
+              Hi, I&apos;m Parth Chaudhari. I build full-stack web applications that pair
+              reliable backend architecture with clear, polished interfaces for real users.
             </p>
           </m.div>
 
           <m.div
             variants={fadeUp}
             className="hero-visual-placeholder"
-            onPointerMove={(event) => {
-              if (isMobile || reduceMotion) {
-                return;
-              }
-
-              const rect = event.currentTarget.getBoundingClientRect();
-              pointerX.set(((event.clientX - rect.left) / rect.width - 0.5) * 2);
-              pointerY.set(((event.clientY - rect.top) / rect.height - 0.5) * 2);
-            }}
-            onPointerLeave={() => {
-              pointerX.set(0);
-              pointerY.set(0);
-            }}
           >
             <div className="hero-visual-glow" aria-hidden="true" />
             <div className="hero-visual-orbit" aria-hidden="true" />
 
-            <div className="relative h-full min-h-[18rem] md:min-h-[26rem]">
-              {/* 3D Geometric Visual */}
-              <div className="absolute inset-0 rounded-2xl overflow-hidden z-0">
-                <Hero3DVisual type="smooth-sphere" colorScheme="purple" />
+            <div className="relative h-full min-h-[14rem] sm:min-h-[18rem] lg:min-h-[28rem]">
+              <div className="absolute inset-0 z-0 overflow-hidden">
+                <Hero3DVisual type="smooth-sphere" colorScheme="purple" reduceMotion={reduceMotion} />
               </div>
             </div>
           </m.div>

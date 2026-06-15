@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { useMotionSettings } from "@/components/motion/motion-settings-provider";
 
@@ -15,9 +15,32 @@ export function PremiumCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const { isMobile, reduceMotion } = useMotionSettings();
+  const [canUseCursor, setCanUseCursor] = useState(false);
 
   useEffect(() => {
-    if (isMobile || reduceMotion || !cursorRef.current || !ringRef.current) {
+    const pointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+
+    const updateCursorAvailability = () => {
+      setCanUseCursor(pointerQuery.matches && !mobileQuery.matches);
+    };
+
+    updateCursorAvailability();
+    pointerQuery.addEventListener("change", updateCursorAvailability);
+    mobileQuery.addEventListener("change", updateCursorAvailability);
+
+    return () => {
+      pointerQuery.removeEventListener("change", updateCursorAvailability);
+      mobileQuery.removeEventListener("change", updateCursorAvailability);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMobile || reduceMotion || !canUseCursor) {
+      return;
+    }
+
+    if (!cursorRef.current || !ringRef.current) {
       return;
     }
 
@@ -26,6 +49,15 @@ export function PremiumCursor() {
     const target: Point = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     const current: Point = { ...target };
     let frameId = 0;
+
+    cursor.style.transform = `translate3d(${target.x - cursorSize / 2}px, ${
+      target.y - cursorSize / 2
+    }px, 0)`;
+    ring.style.transform = `translate3d(${current.x - 24}px, ${
+      current.y - 24
+    }px, 0)`;
+    cursor.style.opacity = "1";
+    ring.style.opacity = "1";
 
     const resetMagneticElement = (element: Element) => {
       (element as HTMLElement).style.transform = "";
@@ -97,11 +129,13 @@ export function PremiumCursor() {
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerleave", handlePointerLeave);
       document.documentElement.classList.remove("has-premium-cursor");
+      cursor.style.opacity = "0";
+      ring.style.opacity = "0";
       handlePointerLeave();
     };
-  }, [isMobile, reduceMotion]);
+  }, [canUseCursor, isMobile, reduceMotion]);
 
-  if (isMobile || reduceMotion) {
+  if (isMobile || reduceMotion || !canUseCursor) {
     return null;
   }
 

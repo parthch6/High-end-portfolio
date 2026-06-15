@@ -38,7 +38,7 @@ export function ProjectCard({
       }}
     >
       <div
-        className="pointer-events-none absolute inset-0 rounded-[1.6rem] bg-brand-gradient opacity-0 blur-2xl transition duration-500 ease-premium group-hover:opacity-20"
+        className="pointer-events-none absolute inset-0 rounded-lg bg-brand-gradient opacity-0 blur-2xl transition duration-500 ease-premium group-hover:opacity-20"
         aria-hidden="true"
       />
 
@@ -57,9 +57,9 @@ export function ProjectCard({
           />
         </div>
 
-        <div className="relative z-10 flex flex-1 flex-col p-6">
+        <div className="relative z-10 flex flex-1 flex-col p-5 sm:p-6">
           <div>
-            <h3 className="font-display text-2xl font-bold tracking-display text-foreground">
+            <h3 className="font-display text-xl font-bold tracking-normal text-foreground sm:text-2xl">
               {title}
             </h3>
             <p className="mt-3 text-body-sm text-muted">{description}</p>

@@ -52,7 +52,7 @@ const config: Config = {
           "5.5rem",
           {
             lineHeight: "0.92",
-            letterSpacing: "-0.05em",
+            letterSpacing: "0",
             fontWeight: "700",
           },
         ],
@@ -60,7 +60,7 @@ const config: Config = {
           "4.25rem",
           {
             lineHeight: "0.96",
-            letterSpacing: "-0.045em",
+            letterSpacing: "0",
             fontWeight: "700",
           },
         ],
@@ -68,7 +68,7 @@ const config: Config = {
           "3.25rem",
           {
             lineHeight: "1",
-            letterSpacing: "-0.04em",
+            letterSpacing: "0",
             fontWeight: "700",
           },
         ],
@@ -76,26 +76,26 @@ const config: Config = {
           "1.125rem",
           {
             lineHeight: "1.8",
-            letterSpacing: "-0.01em",
+            letterSpacing: "0",
           },
         ],
         "body-base": [
           "1rem",
           {
             lineHeight: "1.75",
-            letterSpacing: "-0.01em",
+            letterSpacing: "0",
           },
         ],
         "body-sm": [
           "0.9375rem",
           {
             lineHeight: "1.6",
-            letterSpacing: "-0.01em",
+            letterSpacing: "0",
           },
         ],
       },
       letterSpacing: {
-        display: "-0.05em",
+        display: "0",
       },
       spacing: {
         section: "8rem",
